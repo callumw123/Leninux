@@ -2,7 +2,7 @@
 
 #Declare Variables
 path="/"
-user=$USER
+user=$SUDO_USER
 
 #Display Msg
 echo "Leninux, Cyber Centurion Security Protocols Updater"
@@ -12,13 +12,14 @@ echo "Are you sure you won't to update security setting, MAKE SURE YOU COMPLETE 
 read -p "Continue (Y/N): " continuevar
 
 #Download Files from GitHub 
-path="/home/"$user"/Desktop"
+path="/home/"$user"/Desktop/security"
 git clone https://github.com/callumw123/Leninux security
 
 #copy files over
 
+cp $path/CommonPassword /etc/pam.d/common-password
 
-#gedit /etc/pam.d/common-auth
+
 
 
 
