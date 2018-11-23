@@ -21,6 +21,7 @@ then
 	#copy files over
 
 	#Update Authentication Settings
+
 	cp $path/CommonPassword /etc/pam.d/common-password #Common Password
 	cp $path/CommonAuth /etc/pam.d/common-auth #Common Auth
 	cp $path/LoginDefs /etc/login.defs #Login Defs
@@ -28,6 +29,7 @@ then
 	echo "Security Settings Updated"
 
 	#Disable Guest
+
 	cp $path/Guest /etc/lightdm/lightdm.conf #Guest
 	echo "Guest Disabled"
 
@@ -38,8 +40,16 @@ then
 	echo "Root Login Disabled"
 
 	#Enable Firewall
+
 	apt install ufw && apt install gufw
 	ufw enable
+
+	#Setup Firewall Settings
+
+	sysctl -n net.ipv4.tcp_syncookies #Enable sys Cookie Protection
+	echo net.ipv6.conf.all.disable_ipv6 | sudo tee -a /etc/sysctl.conf #Disable IPv6
+	sudo echo 0 | sudo tee -a /proc/sys/net/ipv4/ip_forward #Disable IP Forwarding
+	sudo echo "nospoof on" | sudo tee -a /etc/host.conf #Prevent IP Spoofing
 
 	echo "Firewall Enabled"
 
