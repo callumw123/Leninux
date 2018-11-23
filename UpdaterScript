@@ -21,8 +21,8 @@ then
 	#copy files over
 
 	cp $path/CommonPassword /etc/pam.d/common-password #Common Password
-	cp $Path/CommonAuth /etc/pam.d/common-auth #Common Auth
-	cp $Path/LoginDefs /etc/login.defs #Login Defs
+	cp $path/CommonAuth /etc/pam.d/common-auth #Common Auth
+	cp $path/LoginDefs /etc/login.defs #Login Defs
 
 	echo "Security Files Updated"
 else
