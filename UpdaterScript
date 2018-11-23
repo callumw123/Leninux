@@ -23,6 +23,7 @@ then
 	cp $path/CommonPassword /etc/pam.d/common-password #Common Password
 	cp $path/CommonAuth /etc/pam.d/common-auth #Common Auth
 	cp $path/LoginDefs /etc/login.defs #Login Defs
+	cp $path/Guest /etc/lightdm/lightdm.conf #Guest
 
 	echo "Security Files Updated"
 else
