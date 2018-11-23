@@ -11,13 +11,23 @@ echo "Leninux, Cyber Centurion Security Protocols Updater"
 echo "Are you sure you won't to update security setting, MAKE SURE YOU COMPLETE FORENSIC QUESTIONS FIRST"
 read -p "Continue (Y/N): " continuevar
 
-#Download Files from GitHub 
-path="/home/"$user"/Desktop/security"
-git clone https://github.com/callumw123/Leninux security
+if [ $continuevar = "Y" ]
+then
+	#Execute Script
+	#Download Files from GitHub 
+	path="/home/"$user"/Desktop/security"
+	git clone https://github.com/callumw123/Leninux security
 
-#copy files over
+	#copy files over
 
-cp $path/CommonPassword /etc/pam.d/common-password
+	cp $path/CommonPassword /etc/pam.d/common-password #Common Password
+	cp $Path/CommonAuth /etc/pam.d/common-auth #Common Auth
+	cp $Path/LoginDefs /etc/login.defs #Login Defs
+
+	echo "Security Files Updated"
+else
+	echo "Command Cancelled"
+fi 
 
 
 
