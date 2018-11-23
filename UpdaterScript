@@ -11,7 +11,7 @@ echo "Leninux, Cyber Centurion Security Protocols Updater"
 echo "Are you sure you won't to update security setting, MAKE SURE YOU COMPLETE FORENSIC QUESTIONS FIRST"
 read -p "Continue (Y/N): " continuevar
 
-if [ $continuevar = "Y" ]
+if [ $continuevar="Y" ]
 then
 	#Execute Script
 	#Download Files from GitHub 
@@ -42,6 +42,12 @@ then
 	ufw enable
 
 	echo "Firewall Enabled"
+
+	#Setup Audit Policy
+	apt-get install auditd
+	auditctl -e 1
+	
+	echo "Audit Policy Enabled"
 
 
 	echo "All Security Settings Updated"
