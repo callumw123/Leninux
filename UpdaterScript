@@ -1,5 +1,4 @@
 #This script updates security settings for linux scripts
-#This script setup: Password Policy, Lockout Policy, Guest Account, Root Login, Audit Policy and Firewall
 
 #Declare Variables
 path="/"
@@ -17,7 +16,7 @@ then
 	#Execute Script
 	#Download Files from GitHub 
 	path="/home/"$user"/Desktop/security"
-	git clone https://github.com/callumw123/Leninux security
+	git clone https://github.com/callumw123/Leninux $path/security
 
 	#copy files over
 
