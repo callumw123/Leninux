@@ -1,4 +1,5 @@
 #This script updates security settings for linux scripts
+#This script setup: Password Policy, Lockout Policy, Guest Account, Root Login, Audit Policy and Firewall
 
 #Declare Variables
 path="/"
