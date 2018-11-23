@@ -49,7 +49,6 @@ then
 	sysctl -n net.ipv4.tcp_syncookies #Enable sys Cookie Protection
 	echo net.ipv6.conf.all.disable_ipv6 | sudo tee -a /etc/sysctl.conf #Disable IPv6
 	sudo echo 0 | sudo tee -a /proc/sys/net/ipv4/ip_forward #Disable IP Forwarding
-	sudo echo "nospoof on" | sudo tee -a /etc/host.conf #Prevent IP Spoofing
 
 	echo "Firewall Enabled"
 
@@ -64,7 +63,6 @@ then
 else
 	echo "Command Cancelled"
 fi 
-
 
 
 
