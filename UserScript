@@ -1,0 +1,26 @@
+#Display Msg
+echo "Leninux, Cyber Centurion User Updater"
+
+#Get nums of admins and users
+
+echo "Enter the Number of Authorised Adminstrators"
+read -p ">>> " adminnums
+
+echo "Enter the Number of Authorised Users"
+read -p ">>> " usernumes
+
+#Get Adminstrators 
+
+admins=0
+i=0
+
+while [ $i-lt$adminnums ] 
+do
+	#Get each admins name
+	read -p "Enter Admin "$i" Name: " name
+	$admins[$i] = $name
+	#Increment Counter
+	$i ='expr $i + 1'
+done
+
+echo $admins[*]
