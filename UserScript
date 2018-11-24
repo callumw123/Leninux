@@ -3,17 +3,6 @@
 #Display Msg
 echo "Leninux, Cyber Centurion User Updater"
 
-#Get nums of admins and users
-
-echo "Enter the Number of Authorised Adminstrators"
-read -p ">>> " adminnums
-
-echo "Enter the Number of Authorised Users"
-read -p ">>> " usernums
-
-echo "Enter the name of the primary admin account (password will not be changed)"
-read -p ">>> " primaryadmin
-
 #Check that the script is being run as sudo
 
 currentUser=$(whoami)
@@ -24,6 +13,17 @@ then
 	echo "The script must be run as root, use sudo!"
 	exit
 fi
+
+#Get nums of admins and users
+
+echo "Enter the Number of Authorised Adminstrators"
+read -p ">>> " adminnums
+
+echo "Enter the Number of Authorised Users"
+read -p ">>> " usernums
+
+echo "Enter the name of the primary admin account (password will not be changed)"
+read -p ">>> " primaryadmin
 
 
 #Get Adminstrators
@@ -144,12 +144,12 @@ do
 			#echo "unauthorised "$u
 			#delete user
 			userdel $u
-			changes+=("'Unauthorised User "$u" Deleted'")
+			changes+=("Unauthorised User "$u" Deleted")
 		fi
 	fi
 done
 
-echo ${changes[@]}
+#echo ${changes[@]}
 
 #Update the list of all current users
 names=$(cat /etc/passwd | grep -v nologin | grep "/home/" | awk -F':' '{print $1}')
@@ -166,3 +166,14 @@ do
 		echo $u":QwertY123!$" | sudo chpasswd
 	fi
 done
+
+#Write change file
+
+echo "Change Log:" >> UserLog.txt
+echo " " >> UserLog.txt
+for c in "${changes[@]}"  
+do
+	echo $c >> UserLog.txt
+done
+echo " " >> UserLog.txt
+echo "Passwords Changed to 'QwertY123!$'" >> UserLog.txt
