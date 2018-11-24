@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Display Msg
 echo "Leninux, Cyber Centurion User Updater"
 
@@ -36,8 +38,8 @@ do
 done
 
 
-echo ${admins[*]}
-echo ${users[*]}
+#echo ${admins[*]}
+#echo ${users[*]}
 
 #Get the list of all current users
 names=$(cat /etc/passwd | grep -v nologin | grep "/home/" | awk -F':' '{print $1}')
@@ -46,9 +48,9 @@ allCurrentUsers=(${names// / })
 
 #Get list of admins
 
-admins=$(grep -Po '^sudo.+:\K.*$' /etc/group)
+cadmins=$(grep -Po '^sudo.+:\K.*$' /etc/group)
 declare -a currentAdmins
-currentAdmins=(${admins/,/ })
+currentAdmins=(${cadmins/,/ })
 
 #Get list of Standard Users
 declare -a currentStandardUsers
@@ -63,9 +65,9 @@ do
 	fi
 done
 
-echo ${currentAdmins[*]}
-echo ${currentStandardUsers[*]}
-echo ${allCurrentUsers[*]}
+#echo ${currentAdmins[*]}
+#echo ${currentStandardUsers[*]}
+#echo ${allCurrentUsers[*]}
 
 #check each supposed standard user
 
@@ -84,7 +86,7 @@ done
 for u in "${admins[@]}" 
 do
 	#check they are admin
-	if [[ " ${currentAdmins[*]} " != *$u* ]]; then
+	if [[ " ${currentAdmins[*]} " == *$u* ]]; then
 		#user is not admin
 		#change them to admin
 		echo "user change to admin "$u
