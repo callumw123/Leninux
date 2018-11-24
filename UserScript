@@ -65,6 +65,43 @@ done
 
 echo ${currentAdmins[*]}
 echo ${currentStandardUsers[*]}
+echo ${allCurrentUsers[*]}
 
+#check each supposed standard user
 
+for u in "${users[@]}" 
+do
+	#check they are not admin
+	if [[ " ${currentAdmins[*]} " == *$u* ]]; then
+		#user is admin
+		#change them to standard user
+		echo "admin change to user "$u
+	fi
+done
 
+#check each supposed admin 
+
+for u in "${admins[@]}" 
+do
+	#check they are admin
+	if [[ " ${currentAdmins[*]} " != *$u* ]]; then
+		#user is not admin
+		#change them to admin
+		echo "user change to admin "$u
+	fi
+done
+
+#check all current users are allowed
+
+for u in "${allCurrentUsers[@]}"  
+do
+	#check each user is authorised
+	if [[ " ${admins[*]} " != *$u* ]]; then
+		#user is not admin
+		if [[ " ${users[*]} " != *$u* ]]; then
+			#user is not standard user
+			#user is unauthorised, delete them
+			echo "unauthorised "$u
+		fi
+	fi
+done
