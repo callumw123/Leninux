@@ -27,6 +27,8 @@ IMPORTANT NOTES:
 
 You enter the users/admin and it changes all passwords to secure ones, delete unauthorised users and check only authorised admins have admin privledges 
 
+IMPORTANT NOTES:
+
 1) ALWAYS run as root
 2) COMPLETE ALL Forensics Questions First
 3) ALWAYS run in the desktop directory
