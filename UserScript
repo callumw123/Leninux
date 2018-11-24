@@ -14,6 +14,18 @@ read -p ">>> " usernums
 echo "Enter the name of the primary admin account (password will not be changed)"
 read -p ">>> " primaryadmin
 
+#Check that the script is being run as sudo
+
+currentUser=$(whoami)
+
+if [[ " $currentUser " != *"root"* ]];
+then
+	#Not root
+	echo "The script must be run as root, use sudo!"
+	exit
+fi
+
+
 #Get Adminstrators
 admins=()
 i=0
@@ -43,6 +55,20 @@ done
 
 #echo ${admins[*]}
 #echo ${users[*]}
+
+#Confirm choices
+echo "Please confirm the users and admins list"
+echo "Admins: "${admins[*]}
+echo "Users: "${users[*]}
+read -p "Confirm (Y/N) " confirmation
+
+if [[ " $confirmation " != *"Y"* ]];
+then
+	#Not confirmed
+	echo "Operation Cancelled"
+	exit
+fi
+
 
 #Get the list of all current users
 names=$(cat /etc/passwd | grep -v nologin | grep "/home/" | awk -F':' '{print $1}')
@@ -125,11 +151,18 @@ done
 
 echo ${changes[@]}
 
+#Update the list of all current users
+names=$(cat /etc/passwd | grep -v nologin | grep "/home/" | awk -F':' '{print $1}')
+declare -a allCurrentUsers
+allCurrentUsers=(${names// / })
+
 #change passwords of all users to QwertY123!$
 
 for u in "${allCurrentUsers[@]}"  
 do
-
-
+	if [[ " $u " != *"$primaryadmin"* ]];
+	then
+		#not primary admin, change password
+		echo $u":QwertY123!$" | sudo chpasswd
+	fi
 done
-do
