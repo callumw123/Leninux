@@ -1,4 +1,4 @@
-#Display Msg
+ #Display Msg
 echo "Leninux, Cyber Centurion User Updater"
 
 #Get nums of admins and users
@@ -7,20 +7,64 @@ echo "Enter the Number of Authorised Adminstrators"
 read -p ">>> " adminnums
 
 echo "Enter the Number of Authorised Users"
-read -p ">>> " usernumes
+read -p ">>> " usernums
 
-#Get Adminstrators 
-
-admins=0
+#Get Adminstrators
+admins=()
 i=0
 
-while [ $i-lt$adminnums ] 
+while [ $i -le $(($adminnums-1)) ]
 do
 	#Get each admins name
-	read -p "Enter Admin "$i" Name: " name
-	$admins[$i] = $name
+	read -p "Enter Admin "$(($i+1))" Name: " name
+	admins+=($name)   
 	#Increment Counter
-	$i ='expr $i + 1'
+	i=$(($i+1))
 done
 
-echo $admins[*]
+#Get Users
+users=()
+i=0
+
+while [ $i -le $(($usernums-1)) ]
+do
+	#Get each users name
+	read -p "Enter User "$(($i+1))" Name: " name
+	users+=($name)   
+	#Increment Counter
+	i=$(($i+1))
+done
+
+
+echo ${admins[*]}
+echo ${users[*]}
+
+#Get the list of all current users
+names=$(cat /etc/passwd | grep -v nologin | grep "/home/" | awk -F':' '{print $1}')
+declare -a allCurrentUsers
+allCurrentUsers=(${names// / })
+
+#Get list of admins
+
+admins=$(grep -Po '^sudo.+:\K.*$' /etc/group)
+declare -a currentAdmins
+currentAdmins=(${admins/,/ })
+
+#Get list of Standard Users
+declare -a currentStandardUsers
+
+for u in "${allCurrentUsers[@]}"
+do	
+	#For each user check if they are admin
+	if [[ " ${currentAdmins[*]} " != *$u* ]]; then
+		#User is not admin
+		#Add to stand users
+		currentStandardUsers+=($u)
+	fi
+done
+
+echo ${currentAdmins[*]}
+echo ${currentStandardUsers[*]}
+
+
+
