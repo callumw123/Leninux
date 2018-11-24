@@ -11,6 +11,9 @@ read -p ">>> " adminnums
 echo "Enter the Number of Authorised Users"
 read -p ">>> " usernums
 
+echo "Enter the name of the primary admin account (password will not be changed)"
+read -p ">>> " primaryadmin
+
 #Get Adminstrators
 admins=()
 i=0
@@ -69,6 +72,9 @@ done
 #echo ${currentStandardUsers[*]}
 #echo ${allCurrentUsers[*]}
 
+#record changes
+changes=()
+
 #check each supposed standard user
 
 for u in "${users[@]}" 
@@ -77,7 +83,10 @@ do
 	if [[ " ${currentAdmins[*]} " == *$u* ]]; then
 		#user is admin
 		#change them to standard user
-		echo "admin change to user "$u
+		#echo "Admin "$u" changed to Standard User"
+		#change to user
+		deluser $u sudo
+		changes+=("Admin "$u" changed to Standard User")
 	fi
 done
 
@@ -86,10 +95,13 @@ done
 for u in "${admins[@]}" 
 do
 	#check they are admin
-	if [[ " ${currentAdmins[*]} " == *$u* ]]; then
+	if [[ " ${currentAdmins[*]} " != *$u* ]]; then
 		#user is not admin
 		#change them to admin
-		echo "user change to admin "$u
+		#echo "user change to admin "$u
+		#change to admin
+		usermod -aG sudo $u
+		changes+=("Standard User "$u" changed to Admin")
 	fi
 done
 
@@ -103,7 +115,21 @@ do
 		if [[ " ${users[*]} " != *$u* ]]; then
 			#user is not standard user
 			#user is unauthorised, delete them
-			echo "unauthorised "$u
+			#echo "unauthorised "$u
+			#delete user
+			userdel $u
+			changes+=("'Unauthorised User "$u" Deleted'")
 		fi
 	fi
 done
+
+echo ${changes[@]}
+
+#change passwords of all users to QwertY123!$
+
+for u in "${allCurrentUsers[@]}"  
+do
+
+
+done
+do
