@@ -50,7 +50,7 @@ allCurrentUsers=(${names// / })
 
 cadmins=$(grep -Po '^sudo.+:\K.*$' /etc/group)
 declare -a currentAdmins
-currentAdmins=(${cadmins/,/ })
+IFS=',' read -ra currentAdmins <<< "$cadmins"
 
 #Get list of Standard Users
 declare -a currentStandardUsers
