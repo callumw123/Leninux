@@ -22,6 +22,7 @@ IMPORTANT NOTES:
 1) ALWAYS run as root
 2) COMPLETE ALL Forensics Questions First
 3) ALWAYS run in the desktop directory
+4) You must give the script permission to run (sudo chmod +x [directory])
 
 #User Scripts (Ubuntu)
 
@@ -33,3 +34,4 @@ IMPORTANT NOTES:
 2) COMPLETE ALL Forensics Questions First
 3) ALWAYS run in the desktop directory
 4) DOUBLE check the users name
+5) You must give the script permission to run (sudo chmod +x [directory])
