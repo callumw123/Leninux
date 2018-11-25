@@ -40,7 +40,8 @@ read -p "Enable SSH (Y/N): " sshenabled
 
 #Start system update 
 
-gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Updated'"
+gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Updated'; bash"
+
 
 #Download Files from GitHub 
 path="/home/"$user"/Desktop/security"
@@ -67,8 +68,9 @@ then
 	echo "SSH updated and secured"
 fi
 
-#Disable Guest
+#Disable Guest and usernames on login page
 
+apt install lightdm
 cp $path/Guest /etc/lightdm/lightdm.conf #Guest
 echo "Guest Disabled"
 
@@ -90,6 +92,11 @@ echo net.ipv6.conf.all.disable_ipv6 | sudo tee -a /etc/sysctl.conf #Disable IPv6
 sudo echo 0 | sudo tee -a /proc/sys/net/ipv4/ip_forward #Disable IP Forwarding
 
 echo "Firewall Enabled"
+
+#Install and update antivirus (clamav)
+
+sudo apt install clamav 
+echo 'Clamav Installed'
 
 #Setup Audit Policy
 apt-get install auditd
