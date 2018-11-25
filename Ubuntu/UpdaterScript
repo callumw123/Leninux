@@ -46,7 +46,7 @@ gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Upd
 #Download Files from GitHub 
 path="/home/"$user"/Desktop/security"
 git clone https://github.com/callumw123/Leninux $path
-
+path="/home/"$user"/Desktop/security/Ubuntu"
 #copy files over
 
 #Update Authentication Settings
