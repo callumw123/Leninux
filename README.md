@@ -16,6 +16,8 @@ The updater script setups the recommended security settings for:
 4) Guest Account
 5) Firewall
 6) Audit Policy
+7) SSH
+8) Updates the System
 
 IMPORTANT NOTES:
 
