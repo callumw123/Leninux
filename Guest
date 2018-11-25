@@ -1,4 +1,5 @@
 [SeatDefaults]
 greeter-session=unity-greeter
 user-session=ubuntu
+greeter-hide-users=true
 allow-guest=false
