@@ -32,7 +32,15 @@ then
 	exit
 fi
 
+echo "Do you want to enable SSH server"
+read -p "Enable SSH (Y/N): " sshenabled
+
 #Execute Script
+
+
+#Start system update 
+
+gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Updated'"
 
 #Download Files from GitHub 
 path="/home/"$user"/Desktop/security"
@@ -47,6 +55,17 @@ cp $path/CommonAuth /etc/pam.d/common-auth #Common Auth
 cp $path/LoginDefs /etc/login.defs #Login Defs
 
 echo "Security Settings Updated"
+
+#Setup SSH
+
+if [[ " $sshenabled " == *"Y"* ]];
+then
+	#Update SSH
+	apt install openssh-server
+	cp $path/sshconfig /etc/ssh/sshd_config #ssh settings
+	service ssh restart
+	echo "SSH updated and secured"
+fi
 
 #Disable Guest
 
