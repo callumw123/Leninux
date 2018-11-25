@@ -18,6 +18,8 @@ The updater script setups the recommended security settings for:
 6) Audit Policy
 7) SSH
 8) Updates the System
+9) Installs antivirus (clamav)
+10) Disables username on login screen
 
 IMPORTANT NOTES:
 
