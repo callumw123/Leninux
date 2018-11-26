@@ -103,6 +103,6 @@ tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
 #Start system update 
 
-gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Updated'; bash"
+gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && tput setaf 1; echo 'System Updated'; tput sgr0; bash"
 
 
