@@ -38,11 +38,6 @@ read -p "Enable SSH (Y/N): " sshenabled
 #Execute Script
 
 
-#Start system update 
-
-gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Updated'; bash"
-
-
 #Download Files from GitHub 
 path="/home/"$user"/Desktop/security"
 git clone https://github.com/callumw123/Leninux $path
@@ -104,5 +99,9 @@ auditctl -e 1
 	
 echo "Audit Policy Enabled"
 
+
+#Start system update 
+
+gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Updated'; bash"
 
 echo "All Security Settings Updated"
