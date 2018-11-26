@@ -99,9 +99,10 @@ auditctl -e 1
 	
 echo "Audit Policy Enabled"
 
+echo "All Security Settings Updated"
 
 #Start system update 
 
 gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && echo 'System Updated'; bash"
 
-echo "All Security Settings Updated"
+
