@@ -50,7 +50,7 @@ cp $path/CommonPassword /etc/pam.d/common-password #Common Password
 cp $path/CommonAuth /etc/pam.d/common-auth #Common Auth
 cp $path/LoginDefs /etc/login.defs #Login Defs
 
-echo "Security Settings Updated"
+tput setaf 2; echo "Security Settings Updated"; tput sgr0
 
 #Setup SSH
 
@@ -60,20 +60,20 @@ then
 	apt install openssh-server
 	cp $path/sshconfig /etc/ssh/sshd_config #ssh settings
 	service ssh restart
-	echo "SSH updated and secured"
+	tput setaf 2; echo "SSH updated and secured"; tput sgr0
 fi
 
 #Disable Guest and usernames on login page
 
 apt install lightdm
 cp $path/Guest /etc/lightdm/lightdm.conf #Guest
-echo "Guest Disabled"
+tput setaf 2; echo "Guest Disabled"; tput sgr0
 
 #Disable Root Login
 
 passwd -l root	
 	
-echo "Root Login Disabled"
+tput setaf 2; echo "Root Login Disabled"; tput sgr0
 
 #Enable Firewall
 
@@ -86,20 +86,20 @@ sysctl -n net.ipv4.tcp_syncookies #Enable sys Cookie Protection
 echo net.ipv6.conf.all.disable_ipv6 | sudo tee -a /etc/sysctl.conf #Disable IPv6
 sudo echo 0 | sudo tee -a /proc/sys/net/ipv4/ip_forward #Disable IP Forwarding
 
-echo "Firewall Enabled"
+tput setaf 2; echo "Firewall Enabled"; tput sgr0
 
 #Install and update antivirus (clamav)
 
 sudo apt install clamav 
-echo 'Clamav Installed'
+tput setaf 2; echo "Clamav Installed"; tput sgr0
 
 #Setup Audit Policy
 apt-get install auditd
 auditctl -e 1
 	
-echo "Audit Policy Enabled"
+tput setaf 2; echo "Audit Policy Enabled"; tput sgr0
 
-echo "All Security Settings Updated"
+tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
 #Start system update 
 
