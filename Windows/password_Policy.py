@@ -24,4 +24,4 @@ def install_and_import(package, packageName):
 
 install_and_import("PyGitHub", 'github')
 
-subprocess.run(['Net', 'accounts'])
+subprocess.run(['Net', 'accounts', '/uniquepw:', '5'])  # password history
