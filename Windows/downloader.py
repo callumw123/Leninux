@@ -63,8 +63,9 @@ userinput = input(
 if userinput.upper() == "Y":
     print("files downloaded to %s" % os.getcwd())
 
-    # import subprocess
-    # subprocess.check_call([package])  # try to run downloaded files
+    import subprocess
+    for file in filestodownload.splitlines():
+        subprocess.check_call([package])  # try to run downloaded files
 else:
     print("files downloaded to %s" % os.getcwd())
 
