@@ -39,7 +39,7 @@ Repo.clone_from('https://github.com/callumw123/Leninux/',
 try:
     shutil.move(os.path.join(t, 'windows/filestodownload.txt'), '.')
 except:
-    print("file  already exists")
+    print("File already exists")
 
 filestodownload = open("filestodownload.txt").read()
 
@@ -59,6 +59,7 @@ if userinput.upper() == "Y":
     import subprocess
     for file in filestodownload.splitlines():
         file = os.getcwd() + '\\' + file
+
         if file[-3:] == "ps1":  # runs as powershell if ps1 file
             # try to run downloaded files
             subprocess.call(['powershell', '-ExecutionPolicy',
