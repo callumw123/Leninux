@@ -1,7 +1,7 @@
 $ActualUsers = Get-LocalUser | Select Name;  # will be a hash of users names
-$ValidUsers = Get-Content .\AllowedUsers.txt; # requires all valid users to be in the allowedusers.txt file
+$ValidUsers = Get-Content .\User_Checking\AllowedUsers.txt; # requires all valid users to be in the allowedusers.txt file
 $currentAdministrators = Get-LocalGroupMember -Group "Administrators" | Select Name; #a hash of all current admins;
-$ValidAdministrators = Get-Content .\AllowedAdmins.txt;
+$ValidAdministrators = Get-Content .\User_Checking\AllowedAdmins.txt;
 $computerName = (Get-WmiObject -Class Win32_ComputerSystem -Property Name).Name;
 
 Write-Host "The following usernames need to be checked and removed:";
@@ -10,7 +10,7 @@ Write-Host "The following usernames need to be checked and removed:";
 foreach($username in $ActualUsers.Name){
     if(!$ValidUsers.Contains($username)){
         Write-Host $username;
-    } 
+    }
 }
 
 #converts users to the same format used by the system: user => COMPUTERNAME\user
