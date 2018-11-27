@@ -65,7 +65,11 @@ if userinput.upper() == "Y":
 
     import subprocess
     for file in filestodownload.splitlines():
-        subprocess.check_call([package])  # try to run downloaded files
+        file = os.getcwd() + '\\' + file
+        if file[-3:] == "ps1":
+            # try to run downloaded files
+            subprocess.call(['powershell', '-ExecutionPolicy',
+                             'RemoteSigned', '-File', file])
 else:
     print("files downloaded to %s" % os.getcwd())
 
