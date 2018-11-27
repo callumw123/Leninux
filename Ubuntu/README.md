@@ -1,10 +1,11 @@
 # Leninux
 CCV Files for Leninux
 
-Two Scripts:
+3 Scripts:
 
 1) UpdaterScript (Ubuntu)
 2) UserScript (Ubuntu)
+3) FileFinder (Ubumtu)
 
 #Updater Script (Ubuntu)
 
@@ -39,3 +40,7 @@ IMPORTANT NOTES:
 3) ALWAYS run in the desktop directory
 4) DOUBLE check the users name
 5) You must give the script permission to run (sudo chmod +x [directory])
+
+#File Finder
+
+A buggy, inefficient script which may prove helpful
