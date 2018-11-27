@@ -25,6 +25,9 @@ def remove_readonly(func, path, excinfo):
     func(path)
 
 
+filestodownload = open("filestodownload.txt").read()
+
+
 install_and_import("shutil", "shutil")
 install_and_import("gitpython", "git")
 from git import Repo
@@ -41,7 +44,6 @@ try:
 except:
     print("File already exists")
 
-filestodownload = open("filestodownload.txt").read()
 
 for file in filestodownload.splitlines():
     try:
