@@ -13,12 +13,14 @@ foreach($username in $ActualUsers.Name){
     }
 }
 
+#changes uers to correct format for analysis
 for($i = 0; $i -lt $ValidAdministrators.Length; $i++){
     $ValidAdministrators[$i] = $computerName + "\" + $ValidAdministrators[$i] ;
 }
 
 Write-Host;
 Write-Host "The following users are admins that dont match your list on this system:";
+#loops though system admins checking if they are in the authorised admins folder
 foreach($admin in $currentAdministrators.Name){
     if(!$ValidAdministrators.Contains($admin)){
         Write-Host $admin;
