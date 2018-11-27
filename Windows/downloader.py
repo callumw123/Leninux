@@ -62,14 +62,16 @@ userinput = input(
     "are you sure you want to run these files straight away? (y / n) \n").upper()
 if userinput.upper() == "Y":
     print("files downloaded to %s" % os.getcwd())
-
     import subprocess
     for file in filestodownload.splitlines():
         file = os.getcwd() + '\\' + file
-        if file[-3:] == "ps1":
+        if file[-3:] == "ps1":  # runs as powershell if ps1 file
             # try to run downloaded files
             subprocess.call(['powershell', '-ExecutionPolicy',
                              'RemoteSigned', '-File', file])
+            elif file[-2:] == "py":  # runs as python if python file
+                # try to run downloaded files
+                subprocess.call(['py', '-3', file])
 else:
     print("files downloaded to %s" % os.getcwd())
 
