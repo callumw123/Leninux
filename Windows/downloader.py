@@ -39,9 +39,9 @@ Repo.clone_from('https://github.com/callumw123/Leninux/',
 # Copy desired file from temporary dir
 shutil.move(os.path.join(t, 'windows/filestodownload.txt'), '.')
 
-FILESTODOWNLOAD = open("FILESTODOWNLOAD.txt")
+filestodownload = open("filestodownload.txt").read()
 
-for file in FILESTODOWNLOAD.splitlines():
+for file in filestodownload.splitlines():
 
     shutil.move(os.path.join(t, 'windows/' + file), '.')
 
