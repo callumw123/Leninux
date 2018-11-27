@@ -28,12 +28,6 @@ def remove_readonly(func, path, excinfo):
 install_and_import("shutil", "shutil")
 install_and_import("gitpython", "git")
 from git import Repo
-# from git import Repo:
-# git_url = 'stack@127.0.1.7:/home2/git/stack.git'
-# repo_dir = '/root/gitrepo/'
-# if __name__ == "__main__":
-#     Repo.clone_from(git_url, repo_dir, branch='master', bare=True)
-#     print("OK")
 
 
 # Create temporary dir
