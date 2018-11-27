@@ -63,9 +63,9 @@ if userinput.upper() == "Y":
             # try to run downloaded files
             subprocess.call(['powershell', '-ExecutionPolicy',
                              'RemoteSigned', '-File', file])
-            elif file[-2:] == "py":  # runs as python if python file
-                # try to run downloaded files
-                subprocess.call(['py', '-3', file])
+        elif file[-2:] == "py":  # runs as python if python file
+            # try to run downloaded files
+            subprocess.call(['py', '-3', file])
 else:
     print("files downloaded to %s" % os.getcwd())
 
