@@ -13,12 +13,14 @@ foreach($username in $ActualUsers.Name){
     } 
 }
 
+#converts users to the same format used by the system: user => COMPUTERNAME\user
 for($i = 0; $i -lt $ValidAdministrators.Length; $i++){
     $ValidAdministrators[$i] = $computerName + "\" + $ValidAdministrators[$i] ;
 }
 
 Write-Host;
 Write-Host "The following users are admins that dont match your list on this system:";
+#loops through admins on the system and checks them against the authoried users file
 foreach($admin in $currentAdministrators.Name){
     if(!$ValidAdministrators.Contains($admin)){
         Write-Host $admin;
