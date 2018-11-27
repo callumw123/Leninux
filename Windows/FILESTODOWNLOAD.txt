@@ -1,2 +1,5 @@
+AllowedAdmins.txt
+AllowedUsers.txt
 firewall.ps1
 checker.ps1
+disableAdminAndGuest.txt
