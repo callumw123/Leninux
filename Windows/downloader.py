@@ -3,6 +3,7 @@ import stat
 import shutil
 import shutil
 import tempfile
+# TODO: add a runner for .txt files
 
 
 def install_and_import(package, packageName):
