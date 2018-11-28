@@ -1,5 +1,16 @@
 #!/bin/bash
 
+#Check that the script is being run as sudo
+
+currentUser=$(whoami)
+
+if [[ " $currentUser " != *"root"* ]];
+then
+	#Not root
+	echo "The script must be run as root, use sudo!"
+	exit
+fi
+
 mediaFileTypes=(png jpg bmp svg mp3 mp4 mov avi)
 
 #Define functions
