@@ -41,7 +41,7 @@ read -p "Enable SSH (Y/N): " sshenabled
 #Download Files from GitHub 
 path="/home/"$user"/Desktop/security"
 git clone https://github.com/callumw123/Leninux $path
-path="/home/"$user"/Desktop/security/Ubuntu"
+path="/home/"$user"/Desktop/security/Ubuntu/SecurityFiles"
 #copy files over
 
 #Update Authentication Settings
