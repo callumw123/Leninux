@@ -82,9 +82,12 @@ ufw enable
 
 #Setup Firewall Settings
 
-sysctl -n net.ipv4.tcp_syncookies #Enable sys Cookie Protection
-echo net.ipv6.conf.all.disable_ipv6 | sudo tee -a /etc/sysctl.conf #Disable IPv6
-sudo echo 0 | sudo tee -a /proc/sys/net/ipv4/ip_forward #Disable IP Forwarding
+ufw logging on #firewall logging enabled
+sudo echo "nospoof on" >> /etc/host.conf #Enable no spoof
+
+#Enable syn cookie protection, disable IPv6 and disable ip forwarding
+
+cp $path/sysctlconfig /etc/sysctl.conf 
 
 tput setaf 2; echo "Firewall Enabled"; tput sgr0
 
@@ -103,6 +106,5 @@ tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
 #Start system update 
 
-gnome-terminal -- sh -c "sudo apt upgrade && sudo apt update && tput setaf 1; echo 'System Updated'; tput sgr0; bash"
-
+gnome-terminal -- sh -c "sudo apt update && sudo apt upgrade && tput setaf 1; echo 'System Updated'; tput sgr0; bash"
 
