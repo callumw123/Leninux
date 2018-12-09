@@ -6,3 +6,8 @@ sudo echo 0 | sudo tee -a /proc/sys/net/ipv4/ip_forward #Disable IP Forwarding
 
 
 https://github.com/Forty-Bot/linux-checklist/blob/master/README.md
+
+
+rm - delete file
+rm -r - delete directory
+rm -rf - delete all files in a directory
