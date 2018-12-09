@@ -13,14 +13,24 @@ The updater script setups the recommended security settings for:
 
 1) Password Policy
 2) Lockout Policy
-3) Root Login
-4) Guest Account
-5) Firewall
-6) Audit Policy
-7) SSH
-8) Updates the System
-9) Installs antivirus (clamav)
-10) Disables username on login screen
+3) Install SSH (optional)
+4) Disable SSH root login (optional)
+5) Enable FTP (optional)
+6) Disable FTP plain text authentication (optional)
+7) Disable Guest Account
+8) Disable Autologin
+9) Disable Usernames on login screen
+10) Disable root login
+11) Enable Firewall
+12) Enable firewall logging
+13) Enable SYN cookie protection
+14) Disable IPv6
+15) Disable IP Forwarding
+16) Enable firewall spoof protection
+17) Install antivirus (clamav)
+18) Install antivirus (clamtk)
+19) Setup Audit Policy
+20) Update and Upgrade System
 
 IMPORTANT NOTES:
 
