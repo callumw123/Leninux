@@ -10,3 +10,4 @@ Currently contains:
   - enables firewall
   - disbales default accounts(Admin and Guest) 
   - enables automatic updating
+* the command "Set-ExecutionPolicy unrestricted" must be run in an administrator powershell window*
