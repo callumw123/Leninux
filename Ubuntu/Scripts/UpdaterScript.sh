@@ -121,10 +121,11 @@ sysctl -p
 
 tput setaf 2; echo "Firewall Enabled"; tput sgr0
 
-#Install and update antivirus (clamav)
+#Install and update antivirus (clamav/clamtk)
 
 sudo apt install clamav 
-tput setaf 2; echo "Clamav Installed"; tput sgr0
+sudo apt install clamtk
+tput setaf 2; echo "Clamav and Clamtk Installed"; tput sgr0
 
 #Setup Audit Policy
 apt-get install auditd
