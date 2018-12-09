@@ -139,6 +139,8 @@ apt install unattended-upgrades
 cp $path/20updates /etc/apt/apt.conf.d/20auto-upgrades
 cp $path/50updates /etc/apt/apt.conf.d/50unattended-upgrades
 
+tput setaf 2; echo "Automatics Updates enabled"; tput sgr0
+
 tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
 #Start system update 
