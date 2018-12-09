@@ -58,6 +58,9 @@ shutil.rmtree(t, onerror=remove_readonly)
 userinput = input(
     "are you sure you want to run these files straight away? (y / n) \n").upper()
 if userinput.upper() == "Y":
+    subprocess.call(['set-ExecutionPolicy',
+                     'unrestricted'])
+
     print("files downloaded to %s" % os.getcwd())
     import subprocess
     for file in filestodownload.splitlines():
