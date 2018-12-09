@@ -3,6 +3,4 @@
 scripts for the automation of mundane tasks for the windows images.
 Currently contains:
 * Checker.ps1: checks users and admins on system against given files
-* firewall.ps1: enables the firewall
-* disableAdminAndGuest.ps1: disables Administrator and Guest accounts
-* downloader.py will download all of the files required. filestodownload.txt specifies which ones
+* Basic Security.ps1: Flushes dns, disables sharing in c: drive, requires control alt delete at log on, enables firewall, disbales default accounts(Admin and Guest) and enables automatic updating
