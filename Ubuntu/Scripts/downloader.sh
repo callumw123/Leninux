@@ -34,7 +34,7 @@ pathscript="/home/"$user"/Desktop/Scripts"
 pathguides="/home/"$user"/Desktop/Guides"
 
 path1=$path"/Ubuntu/Scripts"
-path2=$path"/Checklists\and\Guides"
+path2=$path"/Guides"
 
 cd /
 
