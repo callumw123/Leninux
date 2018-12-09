@@ -30,7 +30,8 @@ The updater script setups the recommended security settings for:
 17) Install antivirus (clamav)
 18) Install antivirus (clamtk)
 19) Setup Audit Policy
-20) Update and Upgrade System
+20) Enable Automatic Updates
+21) Update and Upgrade System
 
 IMPORTANT NOTES:
 
