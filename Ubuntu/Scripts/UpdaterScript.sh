@@ -38,6 +38,11 @@ read -p "Enable SSH (Y/N): " sshenabled
 echo "Do you want to enable FTP (pure-ftpd)"
 read -p "Enable FTP (Y/N): " ftpenabled
 
+if [[ " $sshenabled " == *"Y"* ]];
+then
+	#Check if you should use TLS
+	read -p "Only use TLS (Y/N): " tlsenabled
+fi
 
 #Execute Script
 
@@ -76,7 +81,6 @@ then
 	apt install pure-ftpd
 
 	#Check if you should use TLS
-	read -p "Only use TLS (Y/N): " tlsenabled
 	if [[ " $tlsenabled " == *"Y"* ]];
 	then
 		#Only use TLS
@@ -132,5 +136,4 @@ tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
 #Start system update 
 
-gnome-terminal -- sh -c "sudo apt update && sudo apt upgrade && tput setaf 1; echo 'System Updated'; tput sgr0; bash"
-
+sudo apt update && sudo apt upgrade && tput setaf 1; echo 'System Updated'; tput sgr0;
