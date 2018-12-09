@@ -29,12 +29,12 @@
 # Authentication:
 
 #LoginGraceTime 2m
-#PermitRootLogin no
-#StrictModes yes
-#MaxAuthTries 5
-#MaxSessions 10
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 5
+MaxSessions 10
 
-#PubkeyAuthentication yes
+PubkeyAuthentication yes
 
 # Expect .ssh/authorized_keys2 to be disregarded by default in future.
 #AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2
@@ -53,8 +53,8 @@
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-#PasswordAuthentication yes
-#PermitEmptyPasswords no
+PasswordAuthentication yes
+PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
