@@ -135,6 +135,12 @@ tput setaf 2; echo "Audit Policy Enabled"; tput sgr0
 
 tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
+#Install automatic updates
+apt install unattended-upgrades
+
+cp $path/20updates /etc/apt/apt.conf.d/20auto-upgrades
+cp $path/50updates /etc/apt/apt.conf.d/50unattended-upgrades
+
 #Start system update 
 
 sudo apt update && sudo apt upgrade && tput setaf 1; echo 'System Updated'; tput sgr0;
