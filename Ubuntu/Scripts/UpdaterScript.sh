@@ -35,6 +35,10 @@ fi
 echo "Do you want to enable SSH server"
 read -p "Enable SSH (Y/N): " sshenabled
 
+echo "Do you want to enable FTP (pure-ftpd)"
+read -p "Enable FTP (Y/N): " ftpenabled
+
+
 #Execute Script
 
 
@@ -46,6 +50,7 @@ path="/home/"$user"/Desktop/security/Ubuntu/SecurityFiles"
 
 #Update Authentication Settings
 
+apt install libpam-cracklib | pam-auth-update --force
 cp $path/CommonPassword /etc/pam.d/common-password #Common Password
 cp $path/CommonAuth /etc/pam.d/common-auth #Common Auth
 cp $path/LoginDefs /etc/login.defs #Login Defs
@@ -63,7 +68,27 @@ then
 	tput setaf 2; echo "SSH updated and secured"; tput sgr0
 fi
 
-#Disable Guest and usernames on login page
+#Setup FTP
+
+if [[ " $ftpenabled " == *"Y"* ]];
+then
+	#Update FTP
+	apt install pure-ftpd
+
+	#Check if you should use TLS
+	read -p "Only use TLS (Y/N): " tlsenabled
+	if [[ " $tlsenabled " == *"Y"* ]];
+	then
+		#Only use TLS
+		echo 2 > /etc/pure-ftpd/conf/TLS
+	fi
+
+	#Restart FTP
+	service pure-ftpd restart
+	tput setaf 2; echo "FTP updated and secured"; tput sgr0
+fi
+
+#Disable Guest, autologin and usernames on login page
 
 apt install lightdm
 cp $path/Guest /etc/lightdm/lightdm.conf #Guest
@@ -87,7 +112,8 @@ sudo echo "nospoof on" >> /etc/host.conf #Enable no spoof
 
 #Enable syn cookie protection, disable IPv6 and disable ip forwarding
 
-cp $path/sysctlconfig /etc/sysctl.conf 
+cp $path/sysctlconfig /etc/sysctl.conf
+sysctl -p
 
 tput setaf 2; echo "Firewall Enabled"; tput sgr0
 
