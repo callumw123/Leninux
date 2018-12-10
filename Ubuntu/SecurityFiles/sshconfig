@@ -23,12 +23,12 @@
 #RekeyLimit default none
 
 # Logging
-#SyslogFacility AUTH
-#LogLevel INFO
+SyslogFacility AUTH
+LogLevel INFO
 
 # Authentication:
 
-#LoginGraceTime 2m
+LoginGraceTime 1m
 PermitRootLogin no
 StrictModes yes
 MaxAuthTries 5
@@ -50,7 +50,7 @@ PubkeyAuthentication yes
 # HostbasedAuthentication
 #IgnoreUserKnownHosts no
 # Don't read the user's ~/.rhosts and ~/.shosts files
-#IgnoreRhosts yes
+IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
 PasswordAuthentication yes
@@ -106,7 +106,7 @@ PrintMotd no
 #VersionAddendum none
 
 # no default banner path
-#Banner none
+Banner /etc/issue
 
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
