@@ -38,7 +38,7 @@ read -p "Enable SSH (Y/N): " sshenabled
 echo "Do you want to enable FTP (pure-ftpd)"
 read -p "Enable FTP (Y/N): " ftpenabled
 
-if [[ " $sshenabled " == *"Y"* ]];
+if [[ " $ftpenabled " == *"Y"* ]];
 then
 	#Check if you should use TLS
 	read -p "Only use TLS (Y/N): " tlsenabled
@@ -138,6 +138,8 @@ apt install unattended-upgrades
 
 cp $path/20updates /etc/apt/apt.conf.d/20auto-upgrades
 cp $path/50updates /etc/apt/apt.conf.d/50unattended-upgrades
+
+service unattended-upgrades start
 
 tput setaf 2; echo "Automatics Updates enabled"; tput sgr0
 
