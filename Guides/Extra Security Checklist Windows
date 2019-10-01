@@ -1,0 +1,95 @@
+Firewall Ports Closed (Deny Incoming)
+
+SSH - 22
+
+SMTP - 25
+
+POP3 - 110
+
+SNMP - 161
+
+LDAP - 389
+
+Services (Disabled and Stopped)
+
+ActiveX
+
+Adobe Acrobat
+
+Fax
+
+HomeGroup Listener
+
+HomeGroup Provider
+
+IP helper
+
+Remote Registry
+
+Server
+
+Teamviewer 10
+
+Local Policy
+
+Audit Policy (Success and Failure)
+
+Audit Account Logon events
+
+Audit Account Management
+
+Audit Logon events
+
+Audit Privilege use
+
+Audit Process Tracking
+
+Audit Policy Change
+
+Security Options
+
+Rename Administrator: CyberPatriot
+
+Rename Guest: Administrator
+
+Do not display last user name
+
+Require CTRL+ALT+DELETE
+
+Force system to shut down only when logged in
+
+Clear virtual memory pagefile
+
+Restrict CD/floppy access to locally logged on user
+
+User Rights Assignment
+
+Log on locally: All users listed
+
+Access computer from network: samsung and programmers
+
+change system time: administrators
+
+deny logon: guests
+
+Account Policies
+
+Password Policy
+
+History: 5
+
+Maximum Password age: 30
+
+Minimum Password age: 1
+
+Password Length: 7
+
+Passwords Complex: yes
+
+Account Lockout Policy
+
+Lockout: 10
+
+Threshold: 5
+
+Reset: 5
