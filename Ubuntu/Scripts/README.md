@@ -1,11 +1,34 @@
 # Leninux
 CCV Files for Leninux
 
-3 Scripts:
+6 Scripts:
 
-1) UpdaterScript (Ubuntu)
-2) UserScript (Ubuntu)
-3) FileFinder (Ubumtu)
+1) Downloader.sh (Ubuntu)
+2) Run.sh (Ubuntu)
+3) UpdaterScript.sh (Ubuntu)
+4) UserScript.sh (Ubuntu)
+5) SystemScan.sh (Ubuntu)
+6) FileFinder.sh (Ubuntu)
+
+#Downloader (Ubuntu)
+
+Use this to download the scripts. First copy the script over to the test image and run it. The script will download all the scripts and security files from github and give them permission to run.
+
+IMPORTANT NOTES:
+
+1) ALWAYS run as root
+2) ALWAYS run in the desktop directory
+3) You must give the script permission to run (sudo chmod +x [directory])
+
+#Run (Ubuntu)
+
+Run this script at the start of the round, the script will run the updater script, user script and system scan.
+
+IMPORTANT NOTES:
+
+1) ALWAYS run as root
+2) ALWAYS run in the scripts directory
+3) You must give the script permission to run (sudo chmod +x [directory])
 
 #Updater Script (Ubuntu)
 
@@ -52,6 +75,21 @@ IMPORTANT NOTES:
 4) DOUBLE check the users name
 5) You must give the script permission to run (sudo chmod +x [directory])
 
-#File Finder
+#System Scan (Ubuntu)
 
-A buggy, inefficient script which may prove helpful
+A script that will display all the installed applications and allow you to select which ones need deleting. It also displays all the media files found on the computer.
+
+IMPORTANT NOTES:
+
+1) ALWAYS run as root
+2) Double check which application are to be deleted
+3) You must give the script permission to run (sudo chmod +x [directory])
+
+#File Finder (Ubuntu)
+
+A script which will locate files based on name and/or filetype. 
+
+IMPORTANT NOTES:
+
+1) ALWAYS run as root
+2) You must give the script permission to run (sudo chmod +x [directory])
