@@ -22,4 +22,4 @@ fi
 
 gnome-terminal -x ./UpdaterScript.sh
 gnome-terminal -x ./UserScript.sh
-gnome-terminal -x ./SystemScan.sh
+#gnome-terminal -x ./SystemScan.sh
