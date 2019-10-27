@@ -2,4 +2,7 @@
 greeter-session=unity-greeter
 user-session=ubuntu
 greeter-hide-users=true
+greeter-allow-guest=false
+greeter-show-manual-login=true
 allow-guest=false
+autologin-user=none
