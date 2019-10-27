@@ -101,6 +101,7 @@ tput setaf 2; echo "Guest Disabled"; tput sgr0
 #Disable Root Login
 
 passwd -l root	
+usermod -L root
 	
 tput setaf 2; echo "Root Login Disabled"; tput sgr0
 
@@ -142,6 +143,11 @@ cp $path/50updates /etc/apt/apt.conf.d/50unattended-upgrades
 service unattended-upgrades start
 
 tput setaf 2; echo "Automatics Updates enabled"; tput sgr0
+
+#Setup File Permissions
+
+chmod 640 .bash_history #Bash History File Permissions
+chmod 604 /etc/shadow #Shadow File Permissions
 
 tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
