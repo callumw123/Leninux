@@ -28,11 +28,12 @@ LogLevel VERBOSE
 
 # Authentication:
 
-LoginGraceTime 1m
+LoginGraceTime 60
 PermitRootLogin no
 StrictModes yes
 MaxAuthTries 5
 MaxSessions 10
+Protocol 2
 
 PubkeyAuthentication yes
 
@@ -82,11 +83,12 @@ ChallengeResponseAuthentication no
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
+UsePrivilegeSeperation yes
 
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes
 #GatewayPorts no
-X11Forwarding yes
+X11Forwarding no
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
