@@ -9,4 +9,5 @@ Also check https://support.ca-cyberhub.org/support/solutions/articles/3300020682
 
 #IMPORTANT NOTES!!!!
 
+-Additional Server Checklist, Found here: https://security.utexas.edu/os-hardening-checklist/windows-2016
 -Windows: Disable services such as fax even those they aren't running
