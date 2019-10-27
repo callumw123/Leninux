@@ -146,7 +146,6 @@ tput setaf 2; echo "Automatics Updates enabled"; tput sgr0
 
 #Setup File Permissions
 
-chmod 640 .bash_history #Bash History File Permissions
 chmod 644 /etc/shadow #Shadow File Permissions
 chmod 644 /etc/fstab #Fstab File Permissions
 chmod 644 /etc/passwd #Passwd File Permissions
