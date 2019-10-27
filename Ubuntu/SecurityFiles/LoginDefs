@@ -47,12 +47,12 @@ FAILLOG_ENAB		yes
 # WARNING: Unknown usernames may become world readable. 
 # See #290803 and #298773 for details about how this could become a security
 # concern
-LOG_UNKFAIL_ENAB	no
+LOG_UNKFAIL_ENAB	yes
 
 #
 # Enable logging of successful logins
 #
-LOG_OK_LOGINS		no
+LOG_OK_LOGINS		yes
 
 #
 # Enable "syslog" logging of su activity - in addition to sulog file logging.
