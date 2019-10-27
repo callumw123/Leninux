@@ -54,7 +54,9 @@ The updater script setups the recommended security settings for:
 18) Install antivirus (clamtk)
 19) Setup Audit Policy
 20) Enable Automatic Updates
-21) Update and Upgrade System
+21) Sets file permissions for /etc/shadow, /etc/group, etc/passwd & /etc/fstab
+22) Secures Crontabs
+23) Update and Upgrade System
 
 IMPORTANT NOTES:
 
