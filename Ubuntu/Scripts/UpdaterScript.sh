@@ -147,7 +147,17 @@ tput setaf 2; echo "Automatics Updates enabled"; tput sgr0
 #Setup File Permissions
 
 chmod 640 .bash_history #Bash History File Permissions
-chmod 604 /etc/shadow #Shadow File Permissions
+chmod 644 /etc/shadow #Shadow File Permissions
+chmod 644 /etc/fstab #Fstab File Permissions
+chmod 644 /etc/passwd #Passwd File Permissions
+chmod 644 /etc/group #Group File Permissions
+
+chown -R root:root /etc/passwd #Make sure /etc/passwd is owned by root
+chown -R root:root /etc/shadow #Make sure /etc/shadow is owned by root
+chown -R root:root /etc/group #Make sure /etc/group is owned by root
+chown -R root:root /etc/fstab #Make sure /etc/fstab is owned by root
+
+#Setup Cron
 
 tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
