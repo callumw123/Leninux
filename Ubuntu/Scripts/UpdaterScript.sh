@@ -159,6 +159,14 @@ chown -R root:root /etc/fstab #Make sure /etc/fstab is owned by root
 
 #Setup Cron
 
+crontab -r #Resets crontabs
+/etc/bin/rm -f cron.deny at.deny
+echo root >cron.allow
+echo root >at.allow
+/bin/chown root:root cron.allow at.allow #Sets permissions
+/bin/chmod 644 cron.allow at.allow
+cont
+
 tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
 #Start system update 
