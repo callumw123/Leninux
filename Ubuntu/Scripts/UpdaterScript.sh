@@ -157,6 +157,8 @@ chown -R root:root /etc/shadow #Make sure /etc/shadow is owned by root
 chown -R root:root /etc/group #Make sure /etc/group is owned by root
 chown -R root:root /etc/fstab #Make sure /etc/fstab is owned by root
 
+tput setaf 2; echo "File Permissions Setup"; tput sgr0
+
 #Setup Cron
 
 crontab -r #Resets crontabs
@@ -166,6 +168,8 @@ echo root >at.allow
 /bin/chown root:root cron.allow at.allow #Sets permissions
 /bin/chmod 644 cron.allow at.allow
 cont
+
+tput setaf 2; echo "Crontabs Secured"; tput sgr0
 
 tput setaf 1; echo "All Security Settings Updated"; tput sgr0
 
