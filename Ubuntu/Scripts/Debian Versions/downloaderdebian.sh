@@ -19,7 +19,7 @@ if hash git 2>/dev/null; then
 else
 	echo "Git Not Installed"
 	echo "Installing git"
-  	apt get update
+  	apt-get update
 	apt-get install git-core
 fi
 
