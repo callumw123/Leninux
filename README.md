@@ -8,3 +8,8 @@ Notes:
 3) Leninux Practice Images (Answers keys within images):
 Ubuntu 14.04: https://mega.nz/#!g1JSSIjC!Tp3axqf1_pyBW5sZNEW3TVAmRufsJUtsC_jHeQZi0wM (Primary Admin - Malcom, Password: hello)
 Windows 7: https://mega.nz/#!YsBDgKJb!aRs7h9veS0z-RXuTScXImOTZgVS1zIZ2LBreBWoBGXM (Primary Admin - Malcom, Password: hello)
+
+To Do:
+
+1) DNS Flush Ubuntu
+2) Prevent fork attack ubuntu limit process idea.
